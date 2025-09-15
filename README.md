@@ -8,15 +8,9 @@ Features:
 - Speech-to-Text transcription
 - Keyword detection against a customizable list managed in-app
 - Simple results screen showing authenticity, transcription, and detected keywords
-  
-How to run:
-1. Open this project in DreamFlow and start the Preview/Run Session.
-2. Use the UI to upload or record audio, then run the analysis.
    
 Backend / Integrations:
 - No backend is connected by default.
-- To enable Firebase or Supabase features (auth, storage, real ML), open the relevant panel in DreamFlow and complete the setup.
-- After setup, you can integrate those services as needed.
   
 Where to change things (quick pointers):
 - UI screens: lib/screens/ (home_screen.dart, results_screen.dart, keywords_screen.dart)
