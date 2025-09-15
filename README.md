@@ -1,23 +1,25 @@
-Voice Check & Keyword Detection (PoC)
-A simple Proof of Concept (PoC) web application that analyzes audio files or recorded voice.
+EchoSense — Voice Check & Keyword Detection (Proof of Concept)
+EchoSense is a simple, browser-friendly Flutter application that lets you upload or record audio, perform a voice authenticity check, transcribe speech, and detect predefined keywords in the transcript.
 Features
-- Voice Check → returns “Real” or “Not Real”.
-- Speech-to-Text (STT) using Whisper (open-source).
-- Keyword Detection → checks transcript against an editable list of keywords.
-Tech Stack
-- Backend: Python + FastAPI
-- STT: Whisper (faster-whisper)
-- Frontend: Simple HTML + JS
-Usage
-1. Upload or record an audio file.
-2. Get results: voice authenticity, full transcription, and detected keywords.
-Installation & Run
-```bash
-pip install -r requirements.txt
-uvicorn app:app --reload --port 8000
-```
-
-Then open `frontend/index.html` in your browser.
+- Upload an audio file or record voice directly in the browser
+- Voice authenticity check (Real / Not Real)
+- Speech-to-Text transcription
+- Keyword detection against a customizable list managed in-app
+- Simple results screen showing authenticity, transcription, and detected keywords
+How to run
+1. Open this project in DreamFlow and start the Preview/Run Session.
+2. Use the UI to upload or record audio, then run the analysis.
+Backend / Integrations
+- No backend is connected by default.
+- To enable Firebase or Supabase features (auth, storage, real ML), open the relevant panel in DreamFlow and complete the setup.
+- After setup, you can integrate those services as needed.
+Where to change things (quick pointers)
+- UI screens: lib/screens/ (home_screen.dart, results_screen.dart, keywords_screen.dart)
+- Audio/analysis UI components: lib/widgets/
+- Business logic: lib/services/ (voice_analysis_service.dart, keyword_service.dart)
+- Model: lib/models/analysis_result.dart
 Notes
-- This is a simple PoC demo.
-- Keyword list is editable in `keywords.json`.
+- This is a Proof of Concept app.
+- The voice-auth check is a simulated/stubbed implementation; for production, replace it with a real ML or backend service.
+- Keywords can be edited from the "Keywords" screen in the app.
+
